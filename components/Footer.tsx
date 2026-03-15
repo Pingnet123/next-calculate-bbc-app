@@ -3,7 +3,7 @@ import React from 'react'
 export default function Footer() {
   return (
     <>
-    <div className='w-full flex flex-col items-center mb-15'>
+    <div className='w-full mt-5 flex flex-col items-center mb-15'>
         <h3 className='text-gray-500'>
             © 2025 SAU. All rights reserved.
         </h3>

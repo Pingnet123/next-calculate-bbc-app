@@ -51,7 +51,7 @@ export default function Page() {
       </div>
       {/* Footer */}
       <div className='w-full flex flex-col items-center'>
-        <h3 className='text-gray-500'>
+        <h3 className='text-gray-500 mt-5'>
             © 2025 SAU. All rights reserved.
         </h3>
         <h3 className='text-gray-500'>
