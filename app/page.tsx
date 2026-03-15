@@ -1,65 +1,63 @@
 import Image from "next/image";
-
-export default function Home() {
+import Link from 'next/link';
+import logoImg from '@/assets/logo.png';
+import bmiImg from '@/assets/bmi.png';
+import bmrImg from '@/assets/bmr.png';
+import carImg from '@/assets/car.png';
+export default function Page() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <div className="w-full mt-20 flex flex-col items-center">
+        {/* รูปโลโก้ */}
+        <Image src={logoImg} alt="logoImg" width={100} height={100}/>
+
+        {/*ชื่อเว็บ + รายละเอียด */}
+        <h1 className="mt-5 text-5x1 font-bold">
+        เครื่องมือคำนวณออนไลน์
+        </h1>
+        <h3 className="mt-3 text-lg font-bold text-gray-500">
+        เลือกการคำนวณที่คุณต้องการจากรายการด้านล่าง
+        </h3>
+        {/* Link ไปยังหน้า /bmi,/bmr,/car */}
+        <div className="w-full mt-8 flex justify-center gap-10">
+          <Link href="/bmi" 
+                  className="p-3 border border-gray-200 rounded 
+                            shadow-xl flex flex-col items-center">
+              <Image src={bmiImg} alt="bmiImg" width={65} height={65}/>
+              <h3 className="text-xl">BMI (ดัชนีมวลกาย)</h3>
+              <h5 className="text-sm text-gray-500">
+                คำนวณน้ำหนักของคุณเหมาะสมกับส่วนสูงหรือไม่
+              </h5>
+          </Link>
+          <Link href="/bmr"
+                    className="p-3 border border-gray-200 rounded 
+                            shadow-xl flex flex-col items-center ">
+              <Image src={bmrImg} alt="bmrImg" width={65} height={65}/>
+              <h3 className="text-xl">BMR (อัตราการเผาผลาญ)</h3>
+              <h5 className="text-sm text-gray-500">
+                คำนวณพลังงานขั้นต่ำที่ร่างกายต้องการต่อวัน
+              </h5>
+          </Link>
+          <Link href="/car"
+                  className="p-3 border border-gray-200 rounded 
+                            shadow-xl flex flex-col items-center ">
+              <Image src={carImg} alt="carImg" width={65} height={65}/>
+              <h3 className="text-xl">การผ่อนชำระรถยนต์</h3>
+              <h5 className="text-sm text-gray-500">
+                คำนวณน้ำหนักของคุณเหมาะสมกับส่วนสูงหรือไม่
+              </h5>
+          </Link>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </div>
+      {/* Footer */}
+      <div className='w-full flex flex-col items-center'>
+        <h3 className='text-gray-500'>
+            © 2025 SAU. All rights reserved.
+        </h3>
+        <h3 className='text-gray-500'>
+            Created by NinniN SAU
+        </h3>
     </div>
+    </>
   );
 }
